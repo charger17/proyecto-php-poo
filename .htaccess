@@ -1,0 +1,10 @@
+<ifModule mod_rewrite.c>
+    # Activar el mod_rewrite
+    RewriteEngine on
+    Errordocument 404 http://localhost:8080/master-php/proyecto-php-poo/Error/index
+
+    RewriteCond %{SCRIPT_FILENAME} !-d
+    RewriteCond %{SCRIPT_FILENAME} !-f
+
+    RewriteRule ^(.*)/(.*) index.php?controller=$1&action=$2
+</ifModule>
